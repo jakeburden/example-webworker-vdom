@@ -1,0 +1,21 @@
+{
+  "name": "example-webworker-vdom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hyperstream": "^1.2.2",
+    "main-loop": "^3.2.0",
+    "oppressor": "0.0.1",
+    "patterns": "^1.0.2",
+    "st": "^1.1.0",
+    "virtual-dom": "^2.1.1",
+    "virtual-dom-stream": "^1.0.1"
+  }
+}
