@@ -11,11 +11,16 @@
   "license": "ISC",
   "dependencies": {
     "hyperstream": "^1.2.2",
+    "local-links": "^1.4.0",
     "main-loop": "^3.2.0",
     "oppressor": "0.0.1",
     "patterns": "^1.0.2",
     "st": "^1.1.0",
+    "vdom-as-json": "^1.0.8",
+    "vdom-serialized-patch": "^1.0.2",
+    "vdom-virtualize": "^1.0.1",
     "virtual-dom": "^2.1.1",
-    "virtual-dom-stream": "^1.0.1"
+    "virtual-dom-stream": "^1.0.1",
+    "webworkify": "^1.1.0"
   }
 }
