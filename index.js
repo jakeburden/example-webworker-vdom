@@ -5,18 +5,10 @@ const serve = st({
   path: 'browser'
 })
 const render = require('./server/render')
+const trees = require('./server/trees')
 
-const treeIndex = require('./views/index')
-const treeHome = treeIndex({
-  url: '/',
-  count: 0
-})
-const treeAbout = treeIndex({
-  url: '/about'
-})
-
-routes.add('GET /', render(treeHome))
-routes.add('GET /about', render(treeAbout))
+routes.add('GET /', render(trees.home))
+routes.add('GET /about', render(trees.about))
 
 http.createServer((req, res) => {
   const m = routes.match(req.method + ' ' + req.url)
