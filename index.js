@@ -6,16 +6,17 @@ const serve = st({
 })
 const render = require('./server/render')
 
-const initStates = {
-  index: {
-    url: '/',
-    count: '0'
-  }
-}
+const treeIndex = require('./views/index')
+const treeHome = treeIndex({
+  url: '/',
+  count: 0
+})
+const treeAbout = treeIndex({
+  url: '/about'
+})
 
-const treeIndex = require('./views/index')(initStates.index)
-
-routes.add('GET /', render(treeIndex))
+routes.add('GET /', render(treeHome))
+routes.add('GET /about', render(treeAbout))
 
 http.createServer((req, res) => {
   const m = routes.match(req.method + ' ' + req.url)
