@@ -5,10 +5,9 @@ const home = require('./home')
 const about = require('./about')
 
 module.exports = state => {
+  if (!state) state = {}
   let page
-  const url = state
-              ? state.url
-              : undefined
+  const url = state.url || ''
 
   if (url === '/') {
     page = home(state)

@@ -6,7 +6,16 @@ const serve = st({
 })
 const render = require('./server/render')
 
-routes.add('GET /', render(require('./views/index'), {url: '/'}))
+const initStates = {
+  index: {
+    url: '/',
+    count: '0'
+  }
+}
+
+const treeIndex = require('./views/index')(initStates.index)
+
+routes.add('GET /', render(treeIndex))
 
 http.createServer((req, res) => {
   const m = routes.match(req.method + ' ' + req.url)
