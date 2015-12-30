@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build:js": "NODE_ENV=production node build-steps/scripts",
+    "watch:js": "NODE_ENV=production node build-steps/scripts watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -22,5 +24,13 @@
     "virtual-dom": "^2.1.1",
     "virtual-dom-stream": "^1.0.1",
     "webworkify": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "brfs": "^1.4.1",
+    "browserify": "^12.0.1",
+    "concat-stream": "^1.5.1",
+    "uglify-js": "^2.6.1"
   }
 }
