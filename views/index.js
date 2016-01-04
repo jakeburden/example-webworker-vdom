@@ -4,13 +4,14 @@ const h = require('virtual-dom/h')
 const home = require('./home')
 const about = require('./about')
 
-module.exports = state => {
+module.exports = (emit, state) => {
   if (!state) state = {}
+  if (!emit) emit = () => {}
   let page
   const url = state.url
 
   if (url === '/') {
-    page = home(state)
+    page = home(emit, state)
   } else if (url === '/about') {
     page = about()
   }

@@ -1,9 +1,12 @@
 const work = require('webworkify')
 const main = require('main-loop')
 const {getLocalPathname} = require('local-links')
+const EventEmitter = require('events').EventEmitter
+const bus = new EventEmitter()
+const emit = bus.emit.bind(bus)
 
 const worker = work(require('./worker.thread'))
-const app = require('../views/index')
+const app = require('../views/index').bind(null, emit)
 
 const rootElement = document.getElementById('app')
 
@@ -53,12 +56,16 @@ document.body.addEventListener('click', e => {
     })
     return
   }
+})
 
-  const click = e.target.getAttribute('data-click')
-  if (click) {
-    e.preventDefault()
-    worker.postMessage({
-      type: click
-    })
-  }
+bus.on('increment', () => {
+  worker.postMessage({
+    type: 'increment'
+  })
+})
+
+bus.on('decrement', () => {
+  worker.postMessage({
+    type: 'decrement'
+  })
 })

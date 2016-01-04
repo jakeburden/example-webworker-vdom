@@ -1,11 +1,11 @@
 const treeIndex = require('../views/index')
 
 module.exports = {
-  home: treeIndex({
+  home: treeIndex(null, {
     url: '/',
     count: 0
   }),
-  about: treeIndex({
+  about: treeIndex(null, {
     url: '/about'
   })
 }
