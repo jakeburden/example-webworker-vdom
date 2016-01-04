@@ -16,17 +16,17 @@ module.exports = state => {
   }
 
   return h('main', [
-    h('h1', ['wow']),
+    h('h1', ['example webworker & virtual-dom app']),
     h('nav', [
       h('a', {
-        'attributes': {
-          'href': '/'
+        attributes: {
+          href: '/'
         }
       }, ['home']),
       '|',
       h('a', {
-        'attributes': {
-          'href': '/about'
+        attributes: {
+          href: '/about'
         }
       }, ['about'])
     ]),

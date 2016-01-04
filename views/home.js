@@ -6,13 +6,13 @@ module.exports = state => {
   return h('div', [
     h('p', ['Welcome Home']),
     h('button', {
-      'attributes': {
+      attributes: {
         'data-click': 'decrement'
       }
     }, ['-']),
     h('span', [state.count]),
     h('button', {
-      'attributes': {
+      attributes: {
         'data-click': 'increment'
       }
     }, ['+'])

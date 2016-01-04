@@ -1,12 +1,13 @@
 const work = require('webworkify')
-const mainLoop = require('main-loop')
+const main = require('main-loop')
+const {getLocalPathname} = require('local-links')
 
 const worker = work(require('./worker.thread'))
 const app = require('../views/index')
 
 const rootElement = document.getElementById('app')
 
-const loop = mainLoop({
+const loop = main({
   url: window.location.pathname,
   count: 0
 }, app, {
@@ -21,7 +22,6 @@ window.requestAnimationFrame(() => {
 
 worker.onmessage = msg => {
   const state = msg.data
-  console.log(state)
   const { url } = state
   loop.update(state)
   if (window.location.pathname !== url) {
@@ -44,7 +44,7 @@ window.addEventListener('popstate', () => {
 })
 
 document.body.addEventListener('click', e => {
-  const pathname = e.target.pathname
+  const pathname = getLocalPathname(e)
   if (pathname) {
     e.preventDefault()
     worker.postMessage({
