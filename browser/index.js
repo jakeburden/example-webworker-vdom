@@ -1,6 +1,6 @@
 const work = require('webworkify')
 const main = require('main-loop')
-const {getLocalPathname} = require('local-links')
+const catchLinks = require('catch-links')
 const EventEmitter = require('events').EventEmitter
 const bus = new EventEmitter()
 const emit = bus.emit.bind(bus)
@@ -46,16 +46,11 @@ window.addEventListener('popstate', () => {
   })
 })
 
-document.body.addEventListener('click', e => {
-  const pathname = getLocalPathname(e)
-  if (pathname) {
-    e.preventDefault()
-    worker.postMessage({
-      type: 'setUrl',
-      payload: pathname
-    })
-    return
-  }
+catchLinks(window, pathname => {
+  worker.postMessage({
+    type: 'setUrl',
+    payload: pathname
+  })
 })
 
 bus.on('increment', () => {

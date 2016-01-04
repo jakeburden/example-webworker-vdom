@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "catch-links": "^2.0.0",
     "hyperstream": "^1.2.2",
     "local-links": "^1.4.0",
     "main-loop": "^3.2.0",
