@@ -1,17 +1,21 @@
 const h = require('virtual-dom/h')
 
-module.exports = (emit, state) => {
+module.exports = (worker, state) => {
   return h('div', [
     h('p', ['Welcome Home']),
     h('button', {
       onclick () {
-        emit('decrement')
+        worker.postMessage({
+          type: 'decrement'
+        })
       }
     }, ['-']),
     h('span', [state.count]),
     h('button', {
       onclick () {
-        emit('increment')
+        worker.postMessage({
+          type: 'increment'
+        })
       }
     }, ['+'])
   ])
