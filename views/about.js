@@ -17,5 +17,9 @@ module.exports = () => {
         attributes: {
           href: 'https://github.com/Raynos/main-loop'
         }
-      }, ['main-loop']), ' instead.'])])
+      }, ['main-loop']), ' instead.']), h('a', {
+        attributes: {
+          href: 'https://github.com/jekrb/example-webworker-vdom'
+        }
+      }, ['source'])])
 }

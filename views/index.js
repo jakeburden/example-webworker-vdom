@@ -15,7 +15,7 @@ module.exports = worker => state => {
   }
 
   return h('main', [
-    h('h1', ['example webworker & virtual-dom app']),
+    h('h1', ['index']),
     h('nav', [
       h('a', {
         attributes: {
