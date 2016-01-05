@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "build:js": "NODE_ENV=production node build-steps/scripts",
-    "watch:js": "NODE_ENV=production node build-steps/scripts watch",
+    "removeBundles": "rm -rf browser/dist/app.bundle.js && rm -rf browser/dist/app.bundle.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

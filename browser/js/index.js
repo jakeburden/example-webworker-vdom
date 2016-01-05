@@ -3,7 +3,7 @@ const main = require('main-loop')
 const catchLinks = require('catch-links')
 
 const worker = work(require('./worker.thread'))
-const app = require('../views/index')(worker)
+const app = require('../../views/index')(worker)
 
 const rootElement = document.getElementById('app')
 

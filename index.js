@@ -2,7 +2,7 @@ const http = require('http')
 const routes = require('patterns')()
 const st = require('st')
 const serve = st({
-  path: 'browser'
+  path: 'browser/dist'
 })
 const render = require('./server/render')
 const trees = require('./server/trees')
